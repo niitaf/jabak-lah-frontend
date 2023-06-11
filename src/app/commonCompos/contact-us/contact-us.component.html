@@ -1,0 +1,184 @@
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2 text-center="text-center">  </h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="section-title">
+            <h2 text-center="text-center">Contact us</h2>
+          </div>
+          <img src="assets/images/Contact-us.jpg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN" #forme="ngForm" (submit)="contactUs(forme)" class="php-email-form">
+
+          <!-- Name input-->
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            ngModel
+            #Name="ngModel"
+            name="Name"
+            type="text"
+            required
+            placeholder=" Full name"
+          />
+          <label for="name">Full name</label>
+          <div
+            class="alert alert-danger w-100 error-text"
+            *ngIf="Name.touched && !Name.valid"
+          >
+            <div *ngIf="Name.errors?.['required']">
+              <strong> name </strong>is required
+            </div>
+          </div>
+          </div>
+
+        <!-- Email address input-->
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            ngModel
+            #email="ngModel"
+            name="Email"
+            type="email"
+            placeholder="Email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
+          />
+          <label for="email">Email address</label>
+          <div
+            class="alert alert-danger w-100 error-text"
+            *ngIf="email.touched && !email.valid"
+          >
+            <div *ngIf="email.errors?.['required']">
+              <strong> email </strong>is required
+            </div>
+
+            <div *ngIf="email!.errors?.['pattern']">email incorrect</div>
+          </div>
+        </div>
+        <!-- Phone number input-->
+        <div class="form-floating mb-3">
+          <input
+            ngModel
+            #phone="ngModel"
+            name="phone"
+            class="form-control"
+            id="phone"
+            type="text"
+            placeholder="Phone"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            required
+          />
+          <label for="phone">Phone number</label>
+          <div
+            class="alert alert-danger w-100 error-text error"
+            *ngIf="phone.touched && !phone.valid"
+          >
+            <div *ngIf="phone.errors?.['required']">
+              <strong> Phone Number </strong>is required
+            </div>
+            <!-- <div *ngIf="phone!.errors?.['minlength']">phone incorrect</div> -->
+            <div *ngIf="phone!.errors?.['pattern']">phone incorrect</div>
+          </div>
+        </div>
+
+        <!-- Message input-->
+        <div class="form-floating mb-3">
+          <textarea
+            ngModel
+            #mesage="ngModel"
+            name="message"
+            class="form-control"
+            id="message"
+            type="text"
+            placeholder="Enter your message here..."
+            style="height: 10rem"
+            data-sb-validations="required"
+          ></textarea>
+          <label for="message">Message</label>
+          <div
+            class="alert alert-danger w-100 error-text error"
+            *ngIf="mesage.touched && !mesage.valid"
+          >
+            <div *ngIf="mesage.errors?.['required']">
+              <strong> Phone Number </strong>is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button-->
+      <div class="butt">
+        <button
+          [disabled]="!forme.valid"
+          class="btn btn-primary btn-xl"
+          id="submitButton"
+          type="submit"
+        >
+          Send
+        </button>
+      </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="section-title">
+  <h2 text-center="text-center"></h2>
+</div>
+<section class="ftco-section">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+        <div class="wrapper">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 mb-5">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                      <span class="fa fa-map-marker"></span>
+                    </div>
+                    <div class="text">
+                      <p><span>Address:</span> BP 575, Avenue Abdelkrim Khattabi, 40000, Guéliz-Marrakech</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                      <span class="fa fa-phone"></span>
+                    </div>
+                    <div class="text">
+                      <p><span>Phone:</span> <a href="tel://1234567920">(+212) 0524434746</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="dbox w-100 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                      <span class="fa fa-paper-plane"></span>
+                    </div>
+                    <div class="text">
+                      <p><span>Website:</span>www.ensa.ac.ma</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</section>

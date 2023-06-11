@@ -1,0 +1,46 @@
+<h1>Paiement de facture</h1>
+
+
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2 text-center="text-center">  </h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="section-title">
+            <h2 text-center="text-center">
+              Valider le paiement
+            </h2>
+          </div>
+          <img height="60" *ngIf="this.Creancier=='Maroc Telecom'" src="./assets/images/iam2.jpeg" />
+          <img height="60"  *ngIf="this.Creancier=='Redal'" src="./assets/images/Redal.jpeg" />
+          <img  height="60" *ngIf="this.Creancier=='Amendis'" src="./assets/images/Amendis.jpeg" />
+        </div>
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <div class="php-email-form">
+          <h2 text-center="text-center">
+            <label><strong>Créancier:</strong></label>
+            <p>{{this.Creancier}}</p>
+            <label><strong>Créance</strong></label>
+            <p>{{this.Creance}}</p>
+            <label><strong>Donateur</strong></label>
+            <p *ngIf="this.ImpayQrCode!=null">{{this.ImpayQrCode.donnateur}}</p>
+          </h2>
+
+          <div class="text-center">
+            <button (click)="cancel()" class="btn btn-danger">Abondonner la transaction</button>
+            <button (click)="confirm()" type="btn btn-primary" class="btn btn-success">Confirmer et Signer</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+

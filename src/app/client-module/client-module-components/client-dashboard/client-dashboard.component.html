@@ -1,0 +1,336 @@
+
+<div class="page-holder bg-gray-100">
+  <div class="container-fluid px-lg-4 px-xl-5 contentDiv">
+    <div class="page-header mb-4">
+      <div class="col-lg-12" *ngIf="this.FirstConnection">
+<section id="contact" class="contact">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="section-title">
+            <h2 text-center="text-center">Change Password</h2>
+          </div>
+          <img src="./assets/images/reset_password.jpeg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <div class="php-email-form">
+
+
+            <h2 class="mb-4" style="color: red">
+              You are required to chane the password
+            </h2>
+            <div class="card-footer p-4 text-center">
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="fas fa-lock px-2"></i> Reset Password Now
+              </button>
+            </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+      <div [ngClass]="this.FirstConnection ? 'blur' : 'notBlur'">
+
+
+        <section id="contact" class="contact">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <h2 text-center="text-center">  </h2>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-5 d-flex align-items-stretch">
+                <div class="info">
+                  <div class="section-title">
+                    <h2 text-center="text-center">My Profil</h2>
+                  </div>
+                  <img src="assets/images/profile.jpeg" class="img-fluid animated" alt="">
+                </div>
+              </div>
+
+              <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <form class="php-email-form">
+                  <div class="card-body">
+                    <div class="row mb-3">
+                      <div class="col">
+                        <label class="form-label"
+                          ><i class="fas fa-user"></i> Name</label
+                        >
+                        <input
+                          value="{{ this.User.clientFullName }} {{
+                            this.User.clientLastName
+                          }}"
+                          class="form-control"
+                          disabled
+                        />
+                      </div>
+                        <br />
+                        <div class="mb-3">
+                          <label class="form-label"
+                            ><i class="fas fa-envelope"></i> Email</label
+                          >
+                          <input
+                            class="form-control"
+                            value="{{ this.User.clientEmail }}"
+                            disabled
+                          />
+                        </div>
+                      <br />
+                      <div class="mb-3">
+                          <label class="form-label"
+                            ><i class="fas fa-phone"></i> Phone Number</label
+                          >
+                          <input
+                            class="form-control"
+                            value="{{ this.User.clientPhone }}"
+                            disabled
+                          />
+                        </div>
+                      <br />
+                      <div class="mb-3">
+                          <label class="form-label"
+                            ><i class="fas fa-address-card"></i> Address</label
+                          >
+                          <input
+                            class="form-control"
+                            placeholder="{{ this.User.clientAddress }}"
+                            disabled
+                          />
+                        </div>
+
+
+
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+
+
+        <div class="section-title">
+          <h2 text-center="text-center">  </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10 d-flex align-items-stretch">
+            <div class="info">
+              <app-historique-client></app-historique-client>
+            </div>
+          </div>
+        </div>
+
+          </div>
+
+  </section>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <form action="" #reset="ngForm">
+      <div class="modal-content container">
+        <div class="modal-header" style="display: block">
+          <div class="form-group mb-3">
+            <input
+              ngModel
+              name="newPass"
+              type="password"
+              class="form-control"
+              placeholder="New Password"
+              required="required"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              ngModel
+              name="password"
+              type="password"
+              class="form-control"
+              placeholder=" Confirm New Password"
+              required="required"
+            />
+          </div>
+
+          <div class="modal-footer" style="display: flex">
+            <button
+              (click)="doTheResetPassword(reset.value)"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Confirm
+            </button>
+            <button
+              type="submit"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="changePassword"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <form action="" #f="ngForm">
+      <div class="modal-content container">
+        <div class="modal-header" style="display: block">
+          <div class="form-group mb-3">
+            <input
+              ngModel
+              name="newPass"
+              type="password"
+              class="form-control"
+              placeholder="Ancien Password"
+              required="required"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              ngModel
+              name="confirmPass"
+              type="password"
+              class="form-control"
+              placeholder=" Confirm New Password"
+              required="required"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <input
+              ngModel
+              name="confirm"
+              type="password"
+              class="form-control"
+              placeholder=" Confirm New Password"
+              required="required"
+            />
+          </div>
+
+          <div class="modal-footer" style="display: flex">
+            <button
+              (click)="changePassword(f)"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Confirm
+            </button>
+            <button
+              type="submit"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

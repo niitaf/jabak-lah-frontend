@@ -1,0 +1,74 @@
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2 text-center="text-center">  </h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="section-title">
+            <h1 text-center="text-center">Effectuer Votre Paiment</h1>
+          </div>
+          <div class="col-lg-4">
+            <img height="220" *ngIf="this.creancier=='Maroc Telecom'" src="./assets/images/iam.jpeg" />
+            <img height="250" *ngIf="this.creancier=='Redal'" src="./assets/images/Redal.jpeg" />
+            <img height="300" *ngIf="this.creancier=='Amendis'" src="./assets/images/Amendis.jpeg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form class="php-email-form" action="" #f="ngForm" (submit)="send(f.value)" accept-charset="YTF-8" method="post">
+
+          <div *ngIf="this.creancier=='Redal'" class="form-text">Please enter your reference:</div>
+            <div *ngIf="this.creancier=='Amendis'" class="form-text">Please enter your reference:</div>
+            <div *ngIf="this.creancier=='Maroc Telecom'" class="form-text">Please enter your reference:</div>
+            <div style="display:flex; margin: 0.2rem;">
+
+            <input *ngIf="this.creancier=='Redal'"
+            ngModel
+
+              class="form-control"
+              name="name"
+              type="text"
+              id="name"
+              placeholder="reference"
+            />
+
+            <input *ngIf="this.creancier=='Amendis'"
+            ngModel
+            class="form-control"
+              name="name"
+              type="text"
+              id="name"
+              placeholder="reference"
+            />
+
+
+
+            <input *ngIf="this.creancier=='Maroc Telecom'"
+            ngModel
+            class="form-control"
+              name="name"
+              type="text"
+              id="name"
+              placeholder="reference"
+            />
+            <i *ngIf="this.isCompleted==''" style="color:#ffffff ;margin: 0.2rem;"  class="fa-solid fa-check fa-5x"></i>
+          </div>
+
+
+            <br />
+
+
+
+            <button *ngIf="this.isCompleted=='ok'" type="submit" class="btn btn-primary">Valider</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+

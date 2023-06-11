@@ -1,0 +1,64 @@
+<div class="card overflow-hidden mb-4">
+  <div class="card-header d-flex justify-content-between">
+    <div>
+      <h3>My Clients</h3>
+    </div>
+    <div>
+      <div class="input-group-text">
+        <span class="me-2" id="basic-addon1"
+          ><i class="fas fa-search"></i
+        ></span>
+        <input
+          (ngModelChange)="search($event)"
+          ngModel
+          name="fullname"
+          type="text"
+          class="form-control"
+          placeholder="Search Here"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="list-group rounded-0">
+    <div
+      class="list-group-item border-start-0 border-end-0 py-5"
+      *ngFor="let user of pageSlice"
+    >
+      <div class="d-flex">
+        <div class="flex-shrink-0">
+          <img
+            class="avatar avatar-lg p-1"
+            src="./assets/images/profile.jpeg"
+            alt="Jassa Rich"
+          />
+        </div>
+        <div class="flex-grow-1 ps-3">
+          <small class="float-right">{{
+            this.calculateData(user.creationDate)
+          }}</small>
+          <h3 class="fw-bold">
+            {{ user.clientFullName }}
+          </h3>
+        </div>
+        <div class="text-end pt-3 pr-3 text-lowercase text-md font-weight-bold">
+          <strong><i class="fas fa-calendar"> </i> </strong>
+          {{ this.parseDate(user.creationDate) }}
+        </div>
+      </div>
+    </div>
+    <mat-paginator
+      style="background-color: whitesmoke"
+      [length]="this.lenght"
+      [pageSize]="3"
+      (page)="OnPageChange($event)"
+    ></mat-paginator>
+    <div class="card-footer p-4 text-center">
+      <button class="btn btn-primary" routerLink="/agent/addClient">
+        <i class="fas fa-plus px-2"></i> Add Client
+      </button>
+    </div>
+  </div>
+</div>

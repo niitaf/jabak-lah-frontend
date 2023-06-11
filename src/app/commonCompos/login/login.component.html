@@ -1,0 +1,117 @@
+
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2 text-center="text-center">  </h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="section-title">
+            <h2 text-center="text-center">Sign In</h2>
+          </div>
+          <img src="assets/images/login.jpg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form class="mx-1 mx-md-4" #userForm="ngForm" class="php-email-form">
+            <div class="d-flex align-items-center mb-4">
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fas fa-phone fa-md" aria-hidden="true"></i>
+                </span>
+
+                <input
+                  ngModel
+                  #phoneNumber="ngModel"
+                  type="text"
+                  id="form3Example3c"
+                  class="form-control"
+                  placeholder="Enter Your Number Here"
+                  value="+212"
+                  name="phoneNumber"
+                />
+              </div>
+            </div>
+            <div
+              class="alert alert-danger w-100 error-text"
+              s
+              *ngIf="phoneNumber.touched && !phoneNumber.valid"
+            >
+              <div *ngIf="phoneNumber.errors?.['required']">
+                <strong> Phone Number </strong>is required
+              </div>
+              <div *ngIf="phoneNumber!.errors?.['minlength']">
+                Min Length is
+                {{ phoneNumber.errors?.['minlength'].requiredLength }}
+                dude
+              </div>
+              <div *ngIf="phoneNumber!.errors?.['pattern']">
+                Min Length is
+                {{ phoneNumber.errors?.['pattern'].requiredPattern }} dude
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-3">
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fas fa-lock fa-md" aria-hidden="true"></i>
+                </span>
+
+                <input
+                  ngModel
+                  type="password"
+                  #password="ngModel"
+                  id="form3Example4c"
+                  class="form-control"
+                  placeholder="Enter Your Password"
+                  required
+                  name="password"
+                />
+
+              </div>
+            </div>
+            <div
+              class="alert alert-danger w-100 error-text"
+              s
+              *ngIf="password.touched && !password.valid"
+            >
+              <div *ngIf="password.errors?.['required']">
+                <strong> Password </strong>is required
+              </div>
+              <div *ngIf="password!.errors?.['minlength']">
+                Min Length is
+                {{ password.errors?.['minlength'].requiredLength }}
+                dude
+              </div>
+              <div *ngIf="password!.errors?.['pattern']">
+
+              </div>
+            </div>
+
+            <div
+              class="d-flex justify-content-between align-items-center"
+            >
+              <a routerLink="/forget-password" class="text-body"
+                >Forgot password?</a
+              >
+            </div>
+
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-login"
+                (click)="addStudent(userForm)"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>

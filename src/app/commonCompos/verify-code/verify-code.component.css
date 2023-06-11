@@ -1,0 +1,21 @@
+.btn-login {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background-color: #5400b4;
+    border: none;
+  }
+
+  .btn-login:hover {
+    background-color: #f06657;
+  }
+
+  .num{
+    text-align: center;
+    margin:5px;
+    width: 50px;
+  }
+  .far{
+      display: flex;
+      justify-content: space-around ;
+      text-align: center;
+  }
